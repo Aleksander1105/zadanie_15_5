@@ -21,7 +21,8 @@ App = React.createClass({
 				gif: gif,
 				searchingText: searchingText
 			});
-		}.bind(this))
+		}
+		.bind(this))
 		.catch(function (error) {
 			console.log(error);
 		});
@@ -41,14 +42,17 @@ App = React.createClass({
                 	   		sourceUrl: data.url 
                     	} 
                     	resolve(gif);
-                	} else {
+                	} 
+                	else {
                     	reject(new Error(xhr.statusText)); 
                 	} 
             	};
+
             	xhr.onerror = function () {
                 	reject(new Error(
                   	 `XMLHttpRequest Error: ${xhr.statusText}`));
             	};
+
             	xhr.send();
         	}
         );	
